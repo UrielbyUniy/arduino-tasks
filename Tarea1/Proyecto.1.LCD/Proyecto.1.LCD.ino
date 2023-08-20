@@ -2,7 +2,7 @@
 #include <LiquidCrystal.h> 
 #include <Servo.h>
 LiquidCrystal lcd(7,6,5,4,3,2);
-
+//cccccc
 char * mensaje1 = "WARNING!!!                WARNING!!!";
 char * mensaje2 = "                ARE YOU READY FOR THE ROUND 2?!!                ";//mismo tamano ambos mensajes
 
@@ -26,9 +26,7 @@ void setup()
   lcd.begin (16, 2);
   pinMode(sumar, INPUT_PULLUP);///
   pinMode(restar, INPUT_PULLUP);///
-  pinMode(start, INPUT_PULLUP);///
-  pinMode(LEDVERDE, OUTPUT);    //Codigo de los Led's
-  pinMode(LEDROJO, OUTPUT);
+  
   motor.attach (PINSERVO);    //codigo del motor
 }
 
@@ -45,20 +43,8 @@ void loop()
   lcd.setCursor(3, 1);                    //colocar el cursor en la columna 3 para escribir desde ahi en adelante
   
 
-  if(minutos <= 0 && segundos <= 0){
-  lcd.print("Time: 00:00");  
-  }
-  else if(minutos <= 9 && segundos > 9){
-    lcd.print("Time: 0" + String(b) +":"+ String(a));
-  }
-  else if(minutos <= 9 && segundos <= 9){
-    lcd.print("Time: 0" + String(b) +":0"+ String(a));  
-  }
-  else if(minutos > 9 && segundos <= 9){
-    lcd.print("Time: " + String(b) +":0"+ String(a));
-  }
-  else if(minutos > 9 && segundos > 9){
-    lcd.print("Time: " + String(b) +":"+ String(a));
+  if (readyGo){
+    lcd.print("sssss");
   }
  
 
